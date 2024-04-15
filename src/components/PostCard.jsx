@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 
@@ -11,7 +10,7 @@ const PostCard = ({post}) => {
       </div>
       <div className="text-left w-60">
         <h1 className='text-left font-bold'>{post.title}</h1>
-        <p className='text-left text-sm w-full text-slate-400'>{post.desc}</p>
+        <p className='text-left text-sm w-full text-slate-400'>{post.desc.slice(0,50)}...</p>
         <Link href={`/blog/${post.slug}`}className='underline hover:text-slate-200'>Read More</Link>
       </div>
     </div>

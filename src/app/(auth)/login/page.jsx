@@ -13,7 +13,6 @@ const LoginPage = () => {
         <LoginForm/>
         <div className="mt-4 text-center">
           <form action={handleGithubLogin}>
-
           <button className="bg-gray-900 text-white py-2 px-4 rounded-lg">
             Login with GitHub
           </button>

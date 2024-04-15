@@ -52,7 +52,6 @@ export const handleLogin = async (previousState,formData) => {
 
 export const addBlog = async (formData) => {
   const {title, desc} = Object.fromEntries(formData);
-  console.log(img);
   try {
     connectDB()
     const session = await auth()
@@ -69,7 +68,8 @@ export const addBlog = async (formData) => {
       userId
     })
     await newPost.save()
-    console.log("saved to db");
+    window.location.href = "/blog"; 
+    
   } catch (error) {
    console.log(error);
     return { error: "Something went wrong!" };

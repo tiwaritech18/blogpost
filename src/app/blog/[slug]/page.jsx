@@ -4,20 +4,12 @@ import PostUser from '@/components/PostUser';
 import { Suspense } from 'react';
 import { getPost } from '@/lib/data';
 
-const getData = async (slug) => {
-    const res = await fetch(`http://localhost:3000/api/blog/${slug}`); 
-  
-    if(!res.ok){
-      throw new Error("something went wrong getting single blog");
-    }
-    return res.json()
-  }
+
 
 const SingleBlogPage = async ({params}) => {
     const {slug} = params;
-    const post = await getData(slug)
 
-    // const post = await getPost(blogs)
+    const post = await getPost(slug)
     
 
     return (
